@@ -1432,43 +1432,27 @@ footer {
 
   .book-reader-modal {
     padding: 10px;
-    align-items: center; /* Center horizontally */
-    justify-content: flex-start; /* Start from top */
-    flex-direction: column; /* Stack vertically */
-    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
   }
 
   .book-wrapper-3d {
-    margin-top: 80px; /* Make room for header */
-    height: auto !important;
-    aspect-ratio: auto !important;
-    width: 100%;
-    display: block;
-  }
-
-  .page-side {
-    padding: 15px;
-    position: relative !important;
-    height: auto !important;
-    backface-visibility: visible !important;
-    transform: none !important;
-  }
-
-  .page-side.back {
-    transform: none !important;
-    margin-top: 15px;
-  }
-
-  .story-page-text {
-    font-size: 0.95rem;
+    width: 95vw;
+    height: 60vw; /* Keeps the landscape book aspect ratio so it doesn't get cut off */
+    max-height: 400px;
+    margin-top: 40px;
   }
 
   .story-illustration-holder {
-    display: none !important; /* Hide image on mobile to save space for text and video */
+    height: 100px; /* Smaller image on mobile */
   }
 
   .sign-video-container {
-    height: 150px;
+    height: 120px; /* Smaller video on mobile */
+  }
+
+  .story-page-text {
+    font-size: 0.8rem;
   }
 
   .vocab-card {
@@ -1504,35 +1488,5 @@ footer {
 
   .en-letter-label {
     font-size: 1.5rem;
-  }
-
-  /* CRASH FIX: Memory Optimization for Mobile */
-  /* Do not render all pages and iframes at once. Hide inactive ones. */
-  .book-container-3d {
-    perspective: none !important;
-    display: block !important;
-  }
-  .page-3d {
-    display: none !important; /* Hide all pages by default */
-    transform: none !important;
-    transition: none !important; /* Disable heavy 3D animations */
-    position: relative !important;
-    width: 100% !important;
-    left: 0 !important;
-  }
-  
-  /* Show only the very first page if nothing is flipped */
-  .page-3d:not(.flipped):first-child {
-    display: block !important;
-  }
-
-  /* Or show the exact page that comes immediately after the last flipped page */
-  .page-3d.flipped + .page-3d:not(.flipped) {
-    display: block !important;
-  }
-
-  /* Ensure flipped (past) pages stay hidden */
-  .page-3d.flipped {
-    display: none !important;
   }
 }
