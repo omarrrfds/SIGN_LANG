@@ -1325,3 +1325,130 @@ footer p {
     height: 200px;
   }
 }
+
+/* ------------------------------------------------------------- */
+/* MOBILE FIXES (< 768px)                                        */
+/* ------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Header & Navigation */
+  header {
+    flex-direction: column;
+    padding: 10px 15px;
+    gap: 15px;
+  }
+  
+  .nav-menu {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-item button {
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+  
+  .logo-img {
+    height: 50px;
+  }
+
+  /* Hero Banners */
+  .hero-banner {
+    padding: 20px 15px;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-avatar {
+    width: 80px;
+    height: 80px;
+    margin-top: 15px;
+  }
+
+  /* Grids */
+  .books-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .alphabet-grid, .english-grid, .numbers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  /* Alphabet Subtabs */
+  .alpha-subtabs {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 15px;
+  }
+  
+  .alpha-tab-btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Reader View */
+  .reader-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .reader-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-reader-action {
+    padding: 10px 20px;
+    font-size: 1rem;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  /* Page Content */
+  .page-side {
+    padding: 15px !important;
+  }
+  
+  .story-page-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .story-illustration-holder, .sign-video-container {
+    height: 250px;
+    border-width: 3px;
+    border-radius: 12px;
+  }
+
+  .page-content-wrapper h1 {
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+
+  /* Search Bar */
+  .search-container {
+    padding: 0 15px;
+  }
+  
+  .search-input {
+    font-size: 1rem;
+    padding: 12px 20px 12px 45px;
+  }
+
+  /* Filters */
+  .filters-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+  }
+}
