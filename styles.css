@@ -1455,7 +1455,7 @@ footer {
   }
 
   .story-illustration-holder {
-    height: 150px;
+    display: none !important; /* Hide image on mobile to save space for text and video */
   }
 
   .sign-video-container {
