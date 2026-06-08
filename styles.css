@@ -1432,13 +1432,18 @@ footer {
 
   .book-reader-modal {
     padding: 10px;
-    align-items: flex-start; /* Fix flexbox top cutoff bug on mobile */
-    justify-content: center;
+    align-items: center; /* Center horizontally */
+    justify-content: flex-start; /* Start from top */
+    flex-direction: column; /* Stack vertically */
     overflow-y: auto;
   }
 
   .book-wrapper-3d {
     margin-top: 80px; /* Make room for header */
+    height: auto !important;
+    aspect-ratio: auto !important;
+    width: 100%;
+    display: block;
   }
 
   .page-side {
@@ -1496,6 +1501,7 @@ footer {
   /* Do not render all pages and iframes at once. Hide inactive ones. */
   .book-container-3d {
     perspective: none !important;
+    display: block !important;
   }
   .page-3d {
     display: none !important; /* Hide all pages by default */
