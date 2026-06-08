@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قصتي - مكتبة تفاعلية للأطفال الصم والبكم</title>
+  <meta name="description" content="مكتبة رقمية تفاعلية حديثة للأطفال الصم والبكم تعرض القصص الممتعة برسومات جذابة، ترجمة لغة الإشارة، وقاموس تفاعلي للحركات.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Floating Clouds -->
+  <div class="clouds-bg"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container" onclick="switchTab('library')">
+      <img src="imgs/logo.png" alt="قصتي" class="logo-img" />
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav>
+      <ul class="nav-menu">
+        <li class="nav-item active" id="nav-library">
+          <button id="btn-nav-library">
+            <span>📚</span> مكتبة القصص
+          </button>
+        </li>
+        <li class="nav-item" id="nav-alphabet">
+          <button id="btn-nav-alphabet">
+            <span>🤟</span> الحروف والأرقام
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Accessibility Panels -->
+    <div class="accessibility-panel">
+      <!-- Toggle Sound -->
+      <button class="btn-circle" id="btn-toggle-sound" title="كتم/تشغيل الأصوات التفاعلية">
+        <span>🔊</span>
+      </button>
+      <!-- Contrast Toggle -->
+      <button class="btn-circle" id="btn-toggle-contrast" title="تغيير تباين الألوان">
+        <span>🎨</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content SPA -->
+  <main>
+
+    <!-- ========================================== -->
+    <!-- SECTION 1: LIBRARY ROOM (BOOKSHELF)        -->
+    <!-- ========================================== -->
+    <section id="section-library" class="page-section active">
+      
+      <!-- Welcome Hero Banner -->
+      <div class="hero-banner">
+        <div class="hero-text">
+          <h1>مرحباً بك في مكتبة "قصتي"! 🌟</h1>
+          <p>هنا تجد قصصاً شيقة مليئة بالمغامرات، مصممة بلغة الإشارة وبالكلمات الملونة لتستمتع بالقراءة بمفردك وبكل سهولة!</p>
+        </div>
+        <!-- Mascot Waving Robot SVG -->
+        <svg class="hero-avatar" viewBox="0 0 100 100">
+          <rect x="25" y="30" width="50" height="40" rx="15" fill="#4ecdc4" stroke="#fff" stroke-width="4"/>
+          <!-- Screen -->
+          <rect x="32" y="36" width="36" height="24" rx="8" fill="#2c3e50"/>
+          <!-- Eyes -->
+          <circle cx="43" cy="46" r="4" fill="#00e5ff" style="animation: bounceGently 2s infinite"/>
+          <circle cx="57" cy="46" r="4" fill="#00e5ff" style="animation: bounceGently 2s infinite"/>
+          <!-- Antenna -->
+          <line x1="50" y1="30" x2="50" y2="15" stroke="#4ecdc4" stroke-width="4"/>
+          <circle cx="50" cy="12" r="6" fill="#ff6b6b"/>
+          <!-- Neck -->
+          <rect x="44" y="70" width="12" height="10" fill="#2ab7ca"/>
+          <!-- Base wheels / body -->
+          <ellipse cx="50" cy="84" rx="20" ry="8" fill="#2c3e50"/>
+        </svg>
+      </div>
+
+      <!-- Controls & Search -->
+      <div class="library-controls">
+        <div class="search-bar">
+          <input type="text" id="search-books" placeholder="ابحث عن قصة...">
+          <i>🔍</i>
+        </div>
+        <div class="filter-tags">
+          <button class="filter-btn active" data-category="all">الكل</button>
+          <button class="filter-btn" data-category="حيوانات">🐾 حيوانات</button>
+          <button class="filter-btn" data-category="مغامرة">⛵ مغامرات</button>
+          <button class="filter-btn" data-category="أخلاق">💡 قيم وعِبر</button>
+        </div>
+      </div>
+
+      <!-- Bookshelves Container -->
+      <div class="bookshelf-container" id="bookshelf-rows">
+        <!-- JS will populate shelf-rows and books dynamically -->
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 2: ALPHABET LEARNING BOARD         -->
+    <!-- ========================================== -->
+    <section id="section-alphabet" class="page-section">
+      
+      <!-- Welcome Alphabet Banner -->
+      <div class="hero-banner" style="background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);">
+        <div class="hero-text">
+          <h1 style="color: #2e1065;">لوحة لغة الإشارة التفاعلية 🤟</h1>
+          <p style="color: #4c1d95;">تعلم الحروف العربية والإنجليزية والأرقام بلغة الإشارة! انقر على أي حرف أو رقم لتبدأ التعلم.</p>
+        </div>
+        <!-- Cute Owl mascot -->
+        <svg class="hero-avatar" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="#9b5de5" stroke="#fff" stroke-width="3"/>
+          <ellipse cx="50" cy="70" rx="20" ry="12" fill="#fff" opacity="0.3"/>
+          <circle cx="36" cy="40" r="12" fill="#fff"/>
+          <circle cx="36" cy="40" r="5" fill="#000"/>
+          <circle cx="64" cy="40" r="12" fill="#fff"/>
+          <circle cx="64" cy="40" r="5" fill="#000"/>
+          <polygon points="50,46 45,52 55,52" fill="#ffd166"/>
+          <path d="M10,48 C10,48 5,60 15,65" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M90,48 C90,48 95,60 85,65" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Sub-tab switcher: Arabic / English / Numbers -->
+      <div class="alpha-subtabs" id="alpha-subtabs">
+        <button class="alpha-tab-btn active" id="btn-tab-arabic" onclick="switchAlphaTab('arabic')">🇸🇦 الحروف العربية</button>
+        <button class="alpha-tab-btn" id="btn-tab-english" onclick="switchAlphaTab('english')">🇺🇸 English A–Z</button>
+        <button class="alpha-tab-btn" id="btn-tab-numbers" onclick="switchAlphaTab('numbers')">🔢 Numbers 1–9</button>
+      </div>
+
+      <!-- ===== ARABIC TAB ===== -->
+      <div id="alpha-panel-arabic" class="alpha-panel active">
+        <div class="alphabet-grid-container">
+          <div class="alphabet-grid" id="alphabet-grid"></div>
+          <div class="letter-detail-panel" id="letter-detail-panel">
+            <div class="detail-letter-bubble" id="detail-char">أ</div>
+            <div class="detail-sign-container" id="detail-sign-hand"></div>
+            <div class="detail-word-holder">
+              <h3 class="detail-word-text" id="detail-word">أمثلة: أرنب</h3>
+              <span class="detail-word-english" id="detail-word-en">Rabbit</span>
+            </div>
+            <div style="font-weight:700;color:var(--primary-blue);font-size:1rem;margin-top:10px;" id="detail-gesture-name">
+              إشارة الحرف: الإبهام للأعلى
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ENGLISH TAB ===== -->
+      <div id="alpha-panel-english" class="alpha-panel">
+        <div class="en-grid" id="english-grid"></div>
+      </div>
+
+      <!-- ===== NUMBERS TAB ===== -->
+      <div id="alpha-panel-numbers" class="alpha-panel">
+        <div class="en-grid numbers-grid" id="numbers-grid"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- 3D BOOK READER OVERLAY MODAL               -->
+  <!-- ========================================== -->
+  <div class="book-reader-modal" id="book-reader-modal">
+    
+    <!-- Header overlay controls -->
+    <div class="reader-header">
+      <button class="btn-close-reader" id="btn-close-reader" title="إغلاق الكتاب والعودة للمكتبة">✕</button>
+      <span class="reader-book-title-badge" id="reader-title-badge">اسم القصة</span>
+      <div style="width: 50px;"></div> <!-- Spacer -->
+    </div>
+
+    <!-- 3D Book Canvas Wrapper -->
+    <div class="book-wrapper-3d">
+      <div class="book-container-3d" id="book-container-3d">
+        <!-- JS builds pages dynamically:
+             - Cover page
+             - Page 1 / Page 2
+             - Page 3 / Page 4
+             etc.
+        -->
+      </div>
+    </div>
+
+    <!-- Reader bottom Navigation controls -->
+    <div class="reader-controls-container">
+      <button class="btn-reader-nav btn-reader-prev" id="btn-reader-prev" onclick="turnPrevPage()">
+        <span>➡️</span> الصفحة السابقة
+      </button>
+      <button class="btn-reader-nav btn-reader-next" id="btn-reader-next" onclick="turnNextPage()">
+        الصفحة التالية <span>⬅️</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ========================================== -->
+  <!-- VOCABULARY POPUP (DICTIONARY OVERLAY)      -->
+  <!-- ========================================== -->
+  <div class="vocab-overlay" id="vocab-overlay">
+    <div class="vocab-card">
+      <button class="btn-close-vocab" id="btn-close-vocab">✕</button>
+      <h2 class="vocab-word-title" id="vocab-word-title">أرنب</h2>
+      
+      <div class="vocab-animation-holder" id="vocab-animation-holder">
+        <!-- SVG gesture loop loads here -->
+      </div>
+      
+      <p class="vocab-description" id="vocab-desc">
+        حيوان صغير سريع ذو أذنين طويلتين يحب أكل الجزر.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>صُمّم بكل حب للأطفال المميزين ❤️ موقع "قصتي" - المكتبة الرقمية التفاعلية للصم والبكم © 2026</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
