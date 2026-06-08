@@ -1448,6 +1448,15 @@ footer {
 
   .page-side {
     padding: 15px;
+    position: relative !important;
+    height: auto !important;
+    backface-visibility: visible !important;
+    transform: none !important;
+  }
+
+  .page-side.back {
+    transform: none !important;
+    margin-top: 15px;
   }
 
   .story-page-text {
