@@ -1279,7 +1279,7 @@ footer {
 
   .shelf-row {
     min-height: auto;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
   }
 
@@ -1379,8 +1379,10 @@ footer {
 
 @media (max-width: 480px) {
   header {
-    padding: 8px;
+    padding: 10px;
     border-bottom: 3px solid var(--accent-yellow);
+    flex-direction: column;
+    gap: 10px;
   }
 
   .nav-menu {
@@ -1429,11 +1431,14 @@ footer {
   }
 
   .book-reader-modal {
-    padding: 5px;
+    padding: 10px;
+    align-items: flex-start; /* Fix flexbox top cutoff bug on mobile */
+    justify-content: center;
+    overflow-y: auto;
   }
 
   .book-wrapper-3d {
-    margin-top: 50px;
+    margin-top: 80px; /* Make room for header */
   }
 
   .page-side {
