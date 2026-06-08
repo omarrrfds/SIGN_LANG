@@ -1486,4 +1486,31 @@ footer {
   .en-letter-label {
     font-size: 1.5rem;
   }
+
+  /* CRASH FIX: Memory Optimization for Mobile */
+  /* Do not render all pages and iframes at once. Hide inactive ones. */
+  .book-container-3d {
+    perspective: none !important;
+  }
+  .page-3d {
+    display: none !important; /* Hide all pages by default */
+    transform: none !important;
+    transition: none !important; /* Disable heavy 3D animations */
+    position: relative !important;
+  }
+  
+  /* Show only the very first page if nothing is flipped */
+  .page-3d:not(.flipped):first-child {
+    display: block !important;
+  }
+
+  /* Or show the exact page that comes immediately after the last flipped page */
+  .page-3d.flipped + .page-3d:not(.flipped) {
+    display: block !important;
+  }
+
+  /* Ensure flipped (past) pages stay hidden */
+  .page-3d.flipped {
+    display: none !important;
+  }
 }
