@@ -1377,7 +1377,7 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   header {
     padding: 10px;
     border-bottom: 3px solid var(--accent-yellow);
